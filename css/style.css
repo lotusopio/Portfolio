@@ -1,0 +1,85 @@
+:root {
+  /* Cambia estos valores por tu paleta y tu tipografía */
+  --color-bg: #fdf6f0;
+  --color-text: #2b2b2b;
+  --color-accent: #c9a7eb;
+  --color-card: #ffffff;
+  --font-main: system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-main);
+  background: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+a { color: inherit; }
+
+.nav {
+  position: sticky;
+  top: 0;
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  padding: 1rem;
+  background: var(--color-bg);
+}
+.nav a { text-decoration: none; }
+.nav a:hover { color: var(--color-accent); }
+
+section {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+}
+
+h2 { margin-bottom: 1.5rem; }
+
+.hero {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+.hero h1 { font-size: clamp(2.5rem, 6vw, 4rem); }
+
+.character {
+  position: relative;
+  width: min(380px, 80vw);
+  aspect-ratio: 1 / 1; /* ajústalo a la proporción real de tus PNG */
+}
+.layer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+}
+.iris-layer { transition: transform 0.08s ease-out; }
+
+.skills, .contact { list-style: none; display: flex; flex-wrap: wrap; gap: 0.75rem; }
+.skills li {
+  padding: 0.25rem 0.9rem;
+  border: 1px solid var(--color-accent);
+  border-radius: 999px;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+.card {
+  background: var(--color-card);
+  padding: 1.5rem;
+  border-radius: 16px;
+}
+.card h3 { margin-bottom: 0.5rem; }
+.card-tech { font-size: 0.85rem; opacity: 0.7; margin: 0.75rem 0; }
